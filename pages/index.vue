@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div id="app">
     <vl-map
       :load-tiles-while-animating="true"
       :load-tiles-while-interacting="true"
       data-projection="EPSG:4326"
-      style="height: 400px;">
+      style="height: 100%;">
+
       <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
       <vl-geoloc @update:position="geolocPosition = $event">
@@ -22,57 +23,33 @@
         <vl-source-osm></vl-source-osm>
       </vl-layer-tile>
     </vl-map>
-    <div style="padding: 20px;">
-      Zoom: {{ zoom }}<br>
-      Center: {{ center }}<br>
-      Rotation: {{ rotation }}<br>
-      My geolocation: {{ geolocPosition }}
-    </div>
   </div>
 </template>
 
 <script src="./main.js"></script>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      zoom: 11,
+      center: [-72.58819568968065, 42.24976186590504],
+      rotation: 0,
+      geolocPosition: undefined
+    }
+  }
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+html,
+body,
+#__nuxt,
+#__layout,
+#__layout > div,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
