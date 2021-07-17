@@ -13,11 +13,21 @@
           <vl-feature v-if="geoloc.position" id="position-feature">
             <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
             <vl-style-box>
-              <vl-style-icon src="_media/marker.png" :scale="0.4" :anchor="[0.5, 1]"></vl-style-icon>
+              <vl-style-icon :src="require('~/assets/marker-red.png')" :scale="0.3" :anchor="[0.5, 1]"></vl-style-icon>
             </vl-style-box>
           </vl-feature>
         </template>
       </vl-geoloc>
+
+      <vl-feature id="marker" ref="marker">
+        <template slot-scope="feature">
+          <vl-geom-point :coordinates="[-10, -10]"></vl-geom-point>
+          <vl-style-box>
+            <vl-style-icon :src="require('../assets/marker-blue.png')" :scale="0.5" :anchor="[0.1, 0.95]" :size="[128, 128]"></vl-style-icon>
+          </vl-style-box>
+          <!-- overlay binded to feature -->
+        </template>
+      </vl-feature>
 
       <vl-layer-tile id="osm">
         <vl-source-osm></vl-source-osm>
