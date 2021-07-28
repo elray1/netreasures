@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="appList">
     <div v-for="treasure in treasures" :key="treasure.name" class="treasure_detail">
       <h1> {{ treasure.name }} </h1>
       <div>
@@ -36,18 +36,6 @@ export default {
 </script>
 
 <style>
-html,
-body,
-#__nuxt,
-#__layout,
-#__layout > div,
-#app {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: #bddab1;
-}
-
 .treasure_detail {
   border-color: #228b22;
   border-style: solid;

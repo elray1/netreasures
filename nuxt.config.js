@@ -20,10 +20,10 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{
-    src: '@/plugins/vuelayers.js',
-    ssr: false
-  }],
+  // plugins: [{
+  //   src: '@/plugins/vuelayers.js',
+  //   ssr: false
+  // }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -45,7 +45,9 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     // https://vuelayers.github.io/
-    '~/modules/vuelayers'
+    // '~/modules/vuelayers'
+    // https://github.com/schlunsen/nuxt-leaflet
+    'nuxt-leaflet'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

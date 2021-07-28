@@ -19,6 +19,7 @@
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
+    "nuxt-leaflet": "^0.0.25",
     "ol": "^6.4.3",
     "vuelayers": "^0.11.28"
   },
